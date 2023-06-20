@@ -1,0 +1,38 @@
+
+#include<stdio.h>
+int a[9];
+int key=10;
+int j,k;
+int initialize(){
+for(int i=0;i<9;i++){
+    a[i] = -1;
+}
+}
+
+int push(int val){
+    int size = val%key;
+    for (int i = 0; i < 9; i++) {
+        if (a[(size + i*i) % 9] == -1) {
+            a[(size + i*i) % 9] = val;
+            break;
+        }
+    }
+
+}
+int display(){
+    for(int i=0;i<9;i++){
+        printf("%d ",a[i]);
+    }
+
+}
+
+int main(){
+    printf("enter the values");
+    initialize();
+    push(1);
+    push(11);
+    push(21);
+    push(33);
+    push(99);
+    display();
+}
